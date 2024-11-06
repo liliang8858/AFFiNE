@@ -1,0 +1,25 @@
+{
+  "name": "@affine/env",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@blocksuite/affine": "0.17.26",
+    "vitest": "2.1.4"
+  },
+  "exports": {
+    "./automation": "./src/automation.ts",
+    "./global": "./src/global.ts",
+    "./constant": "./src/constant.ts",
+    "./workspace": "./src/workspace.ts",
+    "./workspace/legacy-cloud": "./src/workspace/legacy-cloud/index.ts",
+    "./filter": "./src/filter.ts",
+    "./blocksuite": "./src/blocksuite/index.ts"
+  },
+  "peerDependencies": {
+    "@affine/templates": "workspace:*"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "version": "0.17.0"
+}

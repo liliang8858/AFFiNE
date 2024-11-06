@@ -1,0 +1,47 @@
+PODS:
+  - Capacitor (6.1.2):
+    - CapacitorCordova
+  - CapacitorApp (6.0.1):
+    - Capacitor
+  - CapacitorBrowser (6.0.3):
+    - Capacitor
+  - CapacitorCordova (6.1.2)
+  - CapacitorKeyboard (6.0.2):
+    - Capacitor
+  - CryptoSwift (1.8.3)
+
+DEPENDENCIES:
+  - "Capacitor (from `../../../../../node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../../../../node_modules/@capacitor/app`)"
+  - "CapacitorBrowser (from `../../../../../node_modules/@capacitor/browser`)"
+  - "CapacitorCordova (from `../../../../../node_modules/@capacitor/ios`)"
+  - "CapacitorKeyboard (from `../../../../../node_modules/@capacitor/keyboard`)"
+  - CryptoSwift (~> 1.8.3)
+
+SPEC REPOS:
+  trunk:
+    - CryptoSwift
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../../../../node_modules/@capacitor/ios"
+  CapacitorApp:
+    :path: "../../../../../node_modules/@capacitor/app"
+  CapacitorBrowser:
+    :path: "../../../../../node_modules/@capacitor/browser"
+  CapacitorCordova:
+    :path: "../../../../../node_modules/@capacitor/ios"
+  CapacitorKeyboard:
+    :path: "../../../../../node_modules/@capacitor/keyboard"
+
+SPEC CHECKSUMS:
+  Capacitor: 679f9673fdf30597493a6362a5d5bf233d46abc2
+  CapacitorApp: 0bc633b4eae40a1f32cd2834788fad3bc42da6a1
+  CapacitorBrowser: aab1ed943b01c0365c4810538a8b3477e2d9f72e
+  CapacitorCordova: f48c89f96c319101cd2f0ce8a2b7449b5fb8b3dd
+  CapacitorKeyboard: 2700f9b18687be021e28b5a09b59eb151a46d5e0
+  CryptoSwift: 967f37cea5a3294d9cce358f78861652155be483
+
+PODFILE CHECKSUM: 1b0d3fe81862c0e9ce712ddd0c5a0accd0097698
+
+COCOAPODS: 1.16.1

@@ -1,11 +1,8 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
-  - name: 💭 Questions and Help - Reddit
-    url: https://www.reddit.com/r/Affine/
-    about: Please ask and answer questions here.
-  - name: 💬 Questions and Help - Telegram
-    url: https://t.me/affineworkos
-    about: Please ask and answer questions here.
-  - name: 🗯 Questions and Help - Discord
-    url: https://discord.gg/yz6tGVsf5p
-    about: Please ask and answer questions here.
+  - name: Something else?
+    url: https://github.com/toeverything/AFFiNE/discussions
+    about: Feel free to ask and answer questions over in GitHub Discussions
+  - name: AFFiNE Community Support
+    url: https://community.affine.pro
+    about: AFFiNE Community - a place to ask, learn and engage with others

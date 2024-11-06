@@ -1,0 +1,57 @@
+{
+  "name": "@affine/native",
+  "private": true,
+  "main": "index.js",
+  "types": "index.d.ts",
+  "napi": {
+    "binaryName": "affine",
+    "targets": [
+      "x86_64-apple-darwin",
+      "x86_64-unknown-linux-gnu",
+      "x86_64-pc-windows-msvc",
+      "aarch64-apple-darwin",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-pc-windows-msvc"
+    ],
+    "ts": {
+      "constEnum": false
+    }
+  },
+  "license": "MIT",
+  "ava": {
+    "extensions": {
+      "mts": "module"
+    },
+    "nodeArguments": [
+      "--loader",
+      "ts-node/esm.mjs",
+      "--es-module-specifier-resolution=node"
+    ],
+    "files": [
+      "__tests__/*.spec.mts"
+    ],
+    "environmentVariables": {
+      "TS_NODE_PROJECT": "./tsconfig.json"
+    }
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "3.0.0-alpha.64",
+    "@types/node": "^20.12.7",
+    "ava": "^6.1.2",
+    "nx": "^20.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">= 10"
+  },
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "napi build --platform --release --no-const-enum",
+    "build:debug": "napi build --platform",
+    "universal": "napi universal",
+    "test": "ava",
+    "version": "napi version"
+  },
+  "version": "0.17.0"
+}

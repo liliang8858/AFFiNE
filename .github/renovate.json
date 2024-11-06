@@ -1,0 +1,70 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":disablePeerDependencies"],
+  "labels": ["dependencies"],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**",
+    "**/examples/**",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/__fixtures__/**"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^eslint", "^@typescript-eslint"],
+      "rangeStrategy": "replace",
+      "groupName": "linter"
+    },
+    {
+      "matchDepNames": ["oxlint"],
+      "rangeStrategy": "replace",
+      "groupName": "oxlint"
+    },
+    {
+      "groupName": "blocksuite",
+      "matchPackagePatterns": ["^@blocksuite"],
+      "excludePackageNames": ["@blocksuite/icons"],
+      "rangeStrategy": "replace",
+      "changelogUrl": "https://github.com/toeverything/blocksuite/blob/master/packages/blocks/CHANGELOG.md"
+    },
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackagePatterns": ["*"],
+      "excludePackagePatterns": ["^@blocksuite/", "oxlint"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "rust toolchain",
+      "matchManagers": ["custom.regex"],
+      "matchDepNames": ["rustc"]
+    },
+    {
+      "groupName": "nestjs",
+      "matchPackagePatterns": ["^@nestjs"]
+    }
+  ],
+  "commitMessagePrefix": "chore: ",
+  "commitMessageAction": "bump up",
+  "commitMessageTopic": "{{depName}} version",
+  "ignoreDeps": [],
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "extends": ["schedule:weekly"]
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^rust-toolchain\\.toml?$"],
+      "matchStrings": [
+        "channel\\s*=\\s*\"(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)\""
+      ],
+      "depNameTemplate": "rustc",
+      "packageNameTemplate": "rust-lang/rust",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}

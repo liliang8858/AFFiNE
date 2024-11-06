@@ -1,0 +1,29 @@
+{
+  "name": "@affine/server-native",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "root": "packages/backend/native",
+  "sourceRoot": "packages/backend/native/src",
+  "targets": {
+    "build": {
+      "executor": "nx:run-script",
+      "dependsOn": ["^build"],
+      "options": {
+        "script": "build"
+      },
+      "inputs": [
+        { "fileset": "{workspaceRoot}/rust-toolchain.toml" },
+        { "fileset": "{workspaceRoot}/Cargo.lock" },
+        { "fileset": "{workspaceRoot}/packages/backend/native/**/*.rs" },
+        { "fileset": "{workspaceRoot}/packages/backend/native/Cargo.toml" },
+        {
+          "runtime": "rustc --version"
+        },
+        {
+          "externalDependencies": ["nx"]
+        }
+      ],
+      "outputs": ["{projectRoot}/*.node"]
+    }
+  }
+}
